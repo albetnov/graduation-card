@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graduation Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body
+    class="font-rubik bg-[url('/assets/img/background.jpg')] bg-cover bg-no-repeat bg-center"
+  >
+    <button
+      class="rounded-full bg-sky-900 text-white py-3 px-2 fixed top-1 right-3 dark:bg-slate-200 dark:text-black"
+      onclick="toggle();"
+    >
+      <img
+        id="modeImg"
+        src="/assets/img/dark.svg"
+        class="h-8 w-8"
+        alt="dark mode"
+      />
+    </button>
+    <div class="container my-3 h-screen flex sm:m-3 sm:mx-auto overflow-hidden">
+      <div
+        class="mx-auto pb-3 sm:p-24 bg-slate-100 opacity-90 sm:opacity-95 rounded self-center dark:bg-slate-400"
+      >
+        <div
+          class="rounded-lg shadow-lg sm:overflow-hidden group sm:hover:scale-95 transition-all duration-500"
+        >
+          <img
+            src="/assets/img/graduation.jpg"
+            alt="your name"
+            class="sm:group-hover:scale-105 sm:group-hover:rotate-1 transition-all duration-500 dark:brightness-90 sm:blur-md sm:hover:blur-none"
+          />
+        </div>
+        <h1
+          class="text-center text-xl sm:text-4xl text-pink-500 dark:text-amber-700 font-semibold mt-3 animate-bounce"
+        >
+          CONGRATULATIONS
+        </h1>
+        <h3
+          class="text-center text-md sm:text-2xl text-pink-400 dark:text-amber-600 animate-pulse"
+        >
+          For your graduation!
+        </h3>
+        <button
+          class="mt-6 px-3 py-2 text-sm bg-pink-300 text-pink-900 hover:bg-pink-600 hover:text-pink-200 text-semibold dark:bg-slate-700 dark:text-lime-500 rounded-md shadow-lg block mx-auto dark:hover:bg-slate-900 dark:hover:text-lime-300 active:border-none active:ring-4 active:ring-pink-300 dark:ring-slate-500"
+          onclick="location.href='https://github.com/albetnov'"
+        >
+          Follow Me
+        </button>
+      </div>
+    </div>
+    <script>
+      function toggle() {
+        const body = document.body;
+        body.classList.toggle("dark");
+        const modeImg = document.querySelector("#modeImg");
+        if (body.classList.contains("dark")) {
+          body.classList.remove("bg-[url('/assets/img/background.jpg')]");
+          body.classList.add("bg-[url('/assets/img/background-dark.jpg')]");
+          modeImg.src = "/assets/img/light.svg";
+        } else {
+          body.classList.remove("bg-[url('/assets/img/background-dark.jpg')]");
+          body.classList.add("bg-[url('/assets/img/background.jpg')]");
+          modeImg.src = "/assets/img/dark.svg";
+        }
+      }
+    </script>
+  </body>
+</html>
